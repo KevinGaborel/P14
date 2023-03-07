@@ -1,0 +1,13 @@
+.mainContainer{
+  text-align: center;
+  margin: 20px 40px;
+}
+.title, .linkToHome{
+  color: #7D87D4;
+}
+.title{
+  font-size: 27px;
+}
+.linkToHome{
+  font-size: 18px;
+}

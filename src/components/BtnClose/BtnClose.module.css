@@ -1,0 +1,13 @@
+.btnClose{
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  width: 25px;
+  height: 25px;
+  font-family: cursive;
+  align-self: self-end;
+  font-weight: 900;
+  cursor: pointer;
+}

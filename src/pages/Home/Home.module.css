@@ -1,0 +1,39 @@
+.homeContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.homeContainer header{
+  text-align: center;
+}
+.homeContainer main{
+  text-align: center;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+}
+.form label{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+.form input{
+  padding-left: 5px;
+  border: #6c7ae0 solid 2px;
+}
+.form fieldset{
+  margin: 20px 0;
+  border: 1px #7D87D4 inset;
+}
+.form button{
+  margin: 20px 0;
+  width: 50px;
+  align-self: center;
+}
+
+.linkToTable{
+  color: #7D87D4;
+  font-size: 18px;
+}

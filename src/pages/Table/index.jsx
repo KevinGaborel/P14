@@ -1,29 +1,17 @@
 import DataTable from '@kevin-gaborel/hrnet';
 import styles from './Table.module.css';
-import mock from '../../data/mock.js';
 import { Link } from "react-router-dom";
-
-export async function loader({ request, params }) {
-  const infos = mock;
-
-  if (!infos) {
-    throw new Response("", {
-      status: 404,
-      statusText: "Not Found",
-    });
-  }
-
-  return infos;
-}
+import { useSelector } from 'react-redux'
 
 const Table = () => {
+  const users = useSelector((state) => state.user.items);
 
   return(
     <div className={styles.mainContainer} >
       <h1 className={styles.title} >Current Employees</h1>
 
       <DataTable
-        data={mock}
+        data={users}
         columns = {[
         { title: 'First Name', data: 'firstName' },
         { title: 'Last Name', data: 'lastName' },

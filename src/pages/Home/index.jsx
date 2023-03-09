@@ -6,9 +6,45 @@ import Modal from "../../components/Modal";
 import states from '../../data/states.json';
 import departments from '../../data/departments.json';
 import { useState } from 'react';
+import { addUser } from '../../features/user'
+import { useDispatch } from 'react-redux'
 
 const Home = () => {
-  const [ close, setClose ] = useState(false);
+  const [ close, setClose ] = useState(true);
+
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formElt = e.target;
+
+    const firstNameValue = formElt.querySelector('#firstName').value;
+    const lastNameValue = formElt.querySelector('#lastName').value;
+    const birthDayValue = formElt.querySelector('#birthDay').value;
+    const startDateValue = formElt.querySelector('#dateStart').value;
+    const streetValue = formElt.querySelector('#street').value;
+    const cityValue = formElt.querySelector('#city').value;
+    const stateValue = formElt.querySelector('#state').value;
+    const zipCodeValue = formElt.querySelector('#zipCode').value;
+    const departmentValue = formElt.querySelector('#department').value;
+
+    dispatch(addUser({
+                  firstName: firstNameValue, 
+                  lastName: lastNameValue, 
+                  dateOfBirth: birthDayValue, 
+                  startDate: startDateValue, 
+                  street: streetValue, 
+                  city: cityValue, 
+                  state: stateValue, 
+                  zipCode: zipCodeValue, 
+                  department: departmentValue
+                }));
+
+    setClose(false);
+    //clean le formulaire
+
+  };
 
   return(
     <div className={styles.homeContainer} >
@@ -21,7 +57,7 @@ const Home = () => {
 
         <h2>Create Employee</h2>
 
-        <form action="" className={styles.form} >
+        <form action="" onSubmit={(e) => handleSubmit(e)} className={styles.form} >
           <label >
             First Name
           <input type="text" name="firstName" id="firstName" />

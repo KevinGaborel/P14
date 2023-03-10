@@ -1,6 +1,9 @@
 .mainContainer{
   text-align: center;
   margin: 20px 40px;
+  padding: 20px 40px;
+  background-color: white;
+  border-radius: 5px;
 }
 .title, .linkToHome{
   color: #7D87D4;

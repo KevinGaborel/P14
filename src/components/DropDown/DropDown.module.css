@@ -2,3 +2,7 @@
   padding-left: 5px;
   border: #6c7ae0 solid 2px;
 }
+.select:focus{
+  border: black solid 2px;
+  border-radius: 5px;
+}

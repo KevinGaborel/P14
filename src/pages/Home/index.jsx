@@ -18,93 +18,103 @@ const Home = () => {
     e.preventDefault();
 
     const formElt = e.target;
+    
+    const formInputElt = {
+      firstName: formElt.querySelector('#firstName'),
+      lastName: formElt.querySelector('#lastName'),
+      birthDay: formElt.querySelector('#birthDay'),
+      startDate: formElt.querySelector('#dateStart'),
+      street: formElt.querySelector('#street'),
+      city: formElt.querySelector('#city'),
+      state: formElt.querySelector('#state'),
+      zipCode: formElt.querySelector('#zipCode'),
+      department: formElt.querySelector('#department')
+    };
 
-    const firstNameValue = formElt.querySelector('#firstName').value;
-    const lastNameValue = formElt.querySelector('#lastName').value;
-    const birthDayValue = formElt.querySelector('#birthDay').value;
-    const startDateValue = formElt.querySelector('#dateStart').value;
-    const streetValue = formElt.querySelector('#street').value;
-    const cityValue = formElt.querySelector('#city').value;
-    const stateValue = formElt.querySelector('#state').value;
-    const zipCodeValue = formElt.querySelector('#zipCode').value;
-    const departmentValue = formElt.querySelector('#department').value;
 
     dispatch(addUser({
-                  firstName: firstNameValue, 
-                  lastName: lastNameValue, 
-                  dateOfBirth: birthDayValue, 
-                  startDate: startDateValue, 
-                  street: streetValue, 
-                  city: cityValue, 
-                  state: stateValue, 
-                  zipCode: zipCodeValue, 
-                  department: departmentValue
+                  firstName: formInputElt.firstName.value, 
+                  lastName: formInputElt.lastName.value, 
+                  dateOfBirth: formInputElt.birthDay.value, 
+                  startDate: formInputElt.startDate.value, 
+                  street: formInputElt.street.value, 
+                  city: formInputElt.city.value, 
+                  state: formInputElt.state.value, 
+                  zipCode: formInputElt.zipCode.value, 
+                  department: formInputElt.department.value
                 }));
 
     setClose(false);
-    //clean le formulaire
+
+    //clean the form
+    formElt.reset();
 
   };
 
   return(
     <div className={styles.homeContainer} >
-      <header>
-        <h1>HRnet</h1>
-        <Link className={styles.linkToTable} to={"/table"}>View Current Employees</Link>
-      </header>
+      <div className={styles.headerMainContainer} >
+        <header>
+          <h1>HRnet</h1>
+          <Link className={styles.linkToTable} to={"/table"}>View Current Employees</Link>
+        </header>
 
-      <main>
+        <main>
 
-        <h2>Create Employee</h2>
+          <h2>Create Employee</h2>
 
-        <form action="" onSubmit={(e) => handleSubmit(e)} className={styles.form} >
-          <label >
-            First Name
-          <input type="text" name="firstName" id="firstName" />
-          </label>
-
-          <label >
-            Last Name
-            <input type="text" name="lastName" id="lastName" />
-          </label>
-          
-          <DateTimePicker name={'birthDay'} value={'Date of Birth'} />
-
-          <DateTimePicker name={'dateStart'} value={'Start Date'} />
-
-          <fieldset>
-            <legend>Address</legend>
-
+          <form action="" onSubmit={(e) => handleSubmit(e)} className={styles.form} >
             <label >
-              Street
-              <input type="text" name="street" id="street" />
+              First Name
+            <input type="text" name="firstName" id="firstName" />
             </label>
 
             <label >
-              City
-              <input type="text" name="city" id="city" />
+              Last Name
+              <input type="text" name="lastName" id="lastName" />
             </label>
 
-            <DropDown tabValue={states} name={"State"} />
 
-            <label>
-              Zip code
-              <input type="number" name="zipCode" id="zipCode" />
-            </label>
+            <DateTimePicker name={'birthDay'} value={'Date of Birth'} />
 
-          </fieldset>
+            <DateTimePicker name={'dateStart'} value={'Start Date'} />
 
-          <DropDown tabValue={departments} name={"Department"} />
+            <fieldset>
+              <legend>Address</legend>
 
-          <button type="submit">Save</button>
+              <label >
+                Street
+                <input type="text" name="street" id="street" />
+              </label>
 
-        </form>
+              <label >
+                City
+                <input type="text" name="city" id="city" />
+              </label>
 
-        <Modal width={'50%'} height={'auto'} close={close} setClose={setClose} >
-          Employee Created!
-        </Modal>
+              <DropDown tabValue={states} name={"State"} />
 
-      </main>
+              <label>
+                Zip code
+                <input type="number" name="zipCode" id="zipCode" />
+              </label>
+
+            </fieldset>
+
+            <DropDown tabValue={departments} name={"Department"} />
+
+            <button type="submit">Save</button>
+
+          </form>
+
+          <Modal width={'50%'} height={'auto'} close={close} setClose={setClose} >
+            Employee Created!
+          </Modal>
+
+        </main>
+
+
+      </div>
     </div>
   );
 };

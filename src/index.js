@@ -6,16 +6,18 @@ import Home from './pages/Home';
 import ErrorPage from './pages/ErrorPage';
 import { Provider } from 'react-redux';
 import store from './utils/store'
+import './index.css';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />
   },
   {
     path: "/table",
     element: <Table />,
+    errorElement: <ErrorPage />
   }
 ]);
 

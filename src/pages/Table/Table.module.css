@@ -1,16 +1,16 @@
 .mainContainer{
   text-align: center;
-  margin: 20px 40px;
-  padding: 20px 40px;
+  margin: 40px 20px;
+  padding: 30px 20px;
   background-color: white;
   border-radius: 5px;
 }
-.title, .linkToHome{
-  color: #7D87D4;
-}
 .title{
   font-size: 27px;
+  color: black;
 }
 .linkToHome{
+  color: #6c7ae0;
   font-size: 18px;
+  font-weight: 700;
 }

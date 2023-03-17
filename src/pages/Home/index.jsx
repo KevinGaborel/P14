@@ -9,6 +9,12 @@ import { useState } from 'react';
 import { addUser } from '../../features/user'
 import { useDispatch } from 'react-redux'
 
+/**
+* It is a function returns a home page
+* Allows to create a new employee by filling out a form and submitting it
+* @return {JSX.Element} Home
+*/
+
 const Home = () => {
   const [ close, setClose ] = useState(true);
 

@@ -3,6 +3,12 @@ import styles from './Table.module.css';
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux'
 
+/**
+* It is a function returns a Table page
+* Allows you to see employees and their information, in a sortable table
+* @return {JSX.Element} Table
+*/
+
 const Table = () => {
   const users = useSelector((state) => state.user.items);
 

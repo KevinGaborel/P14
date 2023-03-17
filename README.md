@@ -15,8 +15,12 @@ Allows you to create employees using a form, then display them in a sortable tab
 
 `npm install`
 
-`npm run star`
+`npm run start`
 
 ### Dependencies:
 
-npm package: [@kevin-gaborel/hrnet](https://www.npmjs.com/package/@kevin-gaborel/hrnet?activeTab=readme)
+- react
+- react-router-dom
+- reduxjs/toolkit
+- react-redux
+- npm package: [@kevin-gaborel/hrnet](https://www.npmjs.com/package/@kevin-gaborel/hrnet?activeTab=readme)

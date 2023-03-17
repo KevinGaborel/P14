@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
+import mock from '../data/mock';
 
 export const userSlice = createSlice({
   name: 'user',
   initialState: {
-    items: []
+    items: process.env.NODE_ENV === "development" ? mock : []
   },
   reducers: {
     addUser: (state, action) => {

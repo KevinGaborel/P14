@@ -12,6 +12,10 @@ import { useSelector } from 'react-redux'
 const Table = () => {
   const users = useSelector((state) => state.user.items);
 
+  if (process.env.NODE_ENV === "development"){
+    console.log(process.env.NODE_ENV);
+  }
+
   return(
     <div className={styles.mainContainer} >
       <h1 className={styles.title} >Current Employees</h1>
